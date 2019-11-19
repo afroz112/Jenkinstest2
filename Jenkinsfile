@@ -1,10 +1,13 @@
-pipeline {
-    agent { docker 'maven:3.3.3' }
-    stages {
-        stage('build') {
-            steps {
-                bat 'mvn --version'
-            }
-        }
+node{
+    stage('SCM Checkout'){
+    
+    git 'https://github.com/afroz112/Jenkinstest2'
+
     }
+    stage('Compile-Package'){
+    
+    sh 'mvn package'
+
+    }
+
 }
