@@ -1,14 +1,9 @@
 node{
-    
     stage('SCM Checkout'){
-    git 'https://github.com/afroz112/Jenkinstest2
-    
+    git 'https://github.com/afroz112/Jenkinstest2'
     }
     stage('Compile-Package'){
-     
         def mvnHome = tool name: 'maven-3', type: 'maven'
-     
         sh "${mvnHome)/bin/mvn package"
     }
-
     }
